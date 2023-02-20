@@ -56,7 +56,7 @@ public class BreakFastsController : ControllerBase
     [HttpGet("{id:guid}")]
     public IActionResult GetBreakfast(Guid id) 
     {
-        Breakfast breakfast = _breakfastService.GetBreakfast(id); // Returns a Breakfast object from DB
+        Breakfast breakfast = _breakfastService.GetBreakfast(id).Result; // Returns a Breakfast object from DB
 
         // Creating response
         var response = new BreakfastResponse(
